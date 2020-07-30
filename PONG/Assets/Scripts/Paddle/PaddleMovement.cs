@@ -8,8 +8,10 @@ public class PaddleMovement : MonoBehaviour
     private void Update()
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        var newPaddlePos = new Vector2(transform.position.x, mousePosition.y);
+
+        var clamPosY = Mathf.Clamp(mousePosition.y, -4, 4);
+        var newPaddlePos = new Vector2(transform.position.x, clamPosY);
+
         transform.position = newPaddlePos;
-        //transform.position = Vector2.Lerp(transform.position, newPaddlePos, 0.5f);
     }
 }

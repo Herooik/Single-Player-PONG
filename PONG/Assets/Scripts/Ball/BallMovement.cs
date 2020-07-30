@@ -48,9 +48,10 @@ public class BallMovement : MonoBehaviour
 
     private void ChangeBounceDirection()
     {
-        var yPos = Random.value;
-        
-        BounceOfTheWall(new Vector2(-1, yPos));
+        var yPos = Random.Range(-1f, 1f);
+        var xPos = Random.Range(-1, -0.5f);
+
+        BounceOfTheWall(new Vector2(xPos, Random.value));
     }
 
     private void BounceOfTheWall(Vector2 setDirection)

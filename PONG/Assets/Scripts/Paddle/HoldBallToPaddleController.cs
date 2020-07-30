@@ -18,7 +18,7 @@ public class HoldBallToPaddleController : MonoBehaviour
 
     private void Update()
     {
-        if (!HasStarted)
+        if (!HasStarted && UIManager.Instance.IsStartMenuHide)
         {
             LockBallToPaddle();
 
