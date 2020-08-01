@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLives: 3
+  _holdBallToPaddleController: {fileID: 964055920}
 --- !u!114 &1991962450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad3e7ad01b72e94987422c9053aed47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPos: 4
+  minPos: -4
 --- !u!114 &1697952931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,4 +165,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c641c9fcff58f9429596eba442ed8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holdBallToPaddleController: {fileID: 964055920}
+  _ballMovement: {fileID: 0}
+  _changeDirectionWall: {fileID: 0}

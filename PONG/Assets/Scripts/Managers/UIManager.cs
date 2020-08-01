@@ -7,13 +7,16 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
-    public bool IsStartMenuHide { get; private set; }
 
+    [SerializeField] private UIAnimationManager _uiAnimationManager;
+    
+    [Header("Gameplay UI")]
     [SerializeField] private TextMeshProUGUI livesText;
-    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI gameplayScoreText;
+
+    [Header("End Menu UI")] 
+    [SerializeField] private TextMeshProUGUI endScoreText;
     [SerializeField] private TextMeshProUGUI highScoreText;
-    [SerializeField] private GameObject startMenu;
-    [SerializeField] private GameObject gameplayUI;
 
     private void Awake()
     {
@@ -23,11 +26,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void StartGame()
+    private void Start()
     {
-        IsStartMenuHide = true;
-        startMenu.SetActive(false);
-        gameplayUI.SetActive(true);
+        _uiAnimationManager.ShowStartMenu();
     }
 
     public void QuitGame()
@@ -41,19 +42,26 @@ public class UIManager : MonoBehaviour
         livesText.text = "Lives: " + livesAmount + "x";
     }
     
-    public void RefreshScoreText(int scoreAmount)
+    public void RefreshScoreText(int scoreValue)
     {
-        scoreText.text = scoreAmount.ToString();
+        gameplayScoreText.text = scoreValue.ToString();
     }
 
-    public void UpdateHighScoreText(int highScore)
+    public void ShowEndMenu(int scoreValue, bool isHighScore)
     {
-        highScoreText.text = "HIGH SCORE: " + highScore;
-    }
+        _uiAnimationManager.ShowEndMenu();
 
-    public void ShowEndGameCanvas()
-    {
-        Debug.LogError("UI END GAME");
+        var highScoreValue = PlayerPrefs.GetInt("High Score");
+        
+        if (isHighScore)
+        {
+            highScoreText.text = "NEW HIGH SCORE!";
+        }
+        else
+        {
+            endScoreText.text = "YOUR SCORE: \n" + scoreValue;
+            highScoreText.text = "HIGH SCORE: \n" + highScoreValue;
+        }
     }
 
 }

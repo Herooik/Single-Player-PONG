@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ScoreManager : MonoBehaviour
-{
+{ 
     public static ScoreManager Instance { get; private set; }
 
     private int _score;
@@ -22,10 +23,8 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         _highScore = PlayerPrefs.GetInt("High Score");
-        _score = 0;
         
-        UIManager.Instance.RefreshScoreText(_score);
-        UIManager.Instance.UpdateHighScoreText(_highScore);
+        ResetScore();
     }
 
     public void AddPoint()
@@ -40,7 +39,20 @@ public class ScoreManager : MonoBehaviour
         {
             _highScore = _score;
             PlayerPrefs.SetInt("High Score", _highScore);
-            UIManager.Instance.UpdateHighScoreText(_highScore);
+            UIManager.Instance.ShowEndMenu(_score, true);
         }
+        else
+        {
+            UIManager.Instance.ShowEndMenu(_score, false);
+        }
+
+        ResetScore();
+    }
+
+    private void ResetScore()
+    {
+        _score = 0;
+
+        UIManager.Instance.RefreshScoreText(_score);
     }
 }

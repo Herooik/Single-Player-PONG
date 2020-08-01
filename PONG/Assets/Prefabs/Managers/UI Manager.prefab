@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 706121777096587781}
   - component: {fileID: 706121777096587782}
+  - component: {fileID: 1070240745}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -43,6 +44,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f314c6f3e4557d4e838d55c60c95289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _uiAnimationManager: {fileID: 1070240745}
   livesText: {fileID: 0}
-  scoreText: {fileID: 0}
+  gameplayScoreText: {fileID: 0}
+  endScoreText: {fileID: 0}
   highScoreText: {fileID: 0}
+--- !u!114 &1070240745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706121777096587783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09488b5ede1eb840a782982963c6823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startGameButton: {fileID: 0}
+  endGameButton: {fileID: 0}
+  backgroundImage: {fileID: 0}
+  gameplayElementsHolder: {fileID: 0}
+  topEndMenuHolder: {fileID: 0}
+  downEndMenuHolder: {fileID: 0}

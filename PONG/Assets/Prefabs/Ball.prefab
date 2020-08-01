@@ -133,5 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e665a3c8cf559b4ba862f20a6bff16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballRigidbody: {fileID: 662778682}
   movementSpeed: 10
+  ballRigidbody: {fileID: 662778682}

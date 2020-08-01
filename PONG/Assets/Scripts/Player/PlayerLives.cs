@@ -7,13 +7,18 @@ using UnityEngine;
 public class PlayerLives : MonoBehaviour
 {
     [SerializeField] private int maxLives = 3;
+    [SerializeField] private HoldBallToPaddleController _holdBallToPaddleController;
     
     private int _lives;
 
     private void Start()
     {
+        ResetLives();
+    }
+    
+    private void ResetLives()
+    {
         _lives = maxLives;
-        
         UIManager.Instance.RefreshPlayerLivesText(_lives);
     }
 
@@ -23,15 +28,17 @@ public class PlayerLives : MonoBehaviour
 
         UIManager.Instance.RefreshPlayerLivesText(_lives);
         
-        GetComponent<HoldBallToPaddleController>().HasStarted = false;
+        _holdBallToPaddleController.HasStarted = false;
         
         // play some sad sound, then
         // play some animation about losing life to inform player and after animation end
-        // move ball back to paddle
 
         if (_lives <= 0)
         {
-            UIManager.Instance.ShowEndGameCanvas();
+            ResetLives();
+
+            GameManager.Instance.GameEnd();
+            
             ScoreManager.Instance.CheckForHighScore();
         }
     }

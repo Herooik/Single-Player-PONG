@@ -6,15 +6,11 @@ using Random = UnityEngine.Random;
 
 public class BallMovement : MonoBehaviour
 {
+    public float movementSpeed = 3f;
+    
     [SerializeField] private Rigidbody2D ballRigidbody;
-    [SerializeField] private float movementSpeed = 3f;
 
     private Vector2 _lastVelocity;
-    
-    private void Start()
-    {
-        AddForceToBall();
-    }
 
     public void AddForceToBall()
     {
@@ -51,7 +47,7 @@ public class BallMovement : MonoBehaviour
         var yPos = Random.Range(-1f, 1f);
         var xPos = Random.Range(-1, -0.5f);
 
-        BounceOfTheWall(new Vector2(xPos, Random.value));
+        BounceOfTheWall(new Vector2(xPos, yPos));
     }
 
     private void BounceOfTheWall(Vector2 setDirection)

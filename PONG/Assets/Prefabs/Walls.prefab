@@ -61,8 +61,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4665693330658439566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.38, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 10, z: 1}
+  m_LocalPosition: {x: -11.49, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 40, z: 1}
   m_Children: []
   m_Father: {fileID: 4665693329998472657}
   m_RootOrder: 3
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 4665693331254088931}
   - component: {fileID: 203249387}
   m_Layer: 0
-  m_Name: Right Wall
+  m_Name: Change Direction Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
