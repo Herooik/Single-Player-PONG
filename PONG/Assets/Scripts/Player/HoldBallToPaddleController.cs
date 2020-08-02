@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HoldBallToPaddleController : MonoBehaviour
 {
-    public bool HasStarted { get; set; }
+    public bool isBallLaunched;
     
     [SerializeField] private GameObject ballPrefab;
 
@@ -18,7 +18,7 @@ public class HoldBallToPaddleController : MonoBehaviour
 
     private void Update()
     {
-        if (!HasStarted && GameManager.Instance.IsGameReady)
+        if (!isBallLaunched && GameManager.Instance.IsGameReady)
         {
             LockBallToPaddle();
 
@@ -35,7 +35,7 @@ public class HoldBallToPaddleController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            HasStarted = true;
+            isBallLaunched = true;
             ballPrefab.GetComponent<BallMovement>().AddForceToBall();
         }
     }

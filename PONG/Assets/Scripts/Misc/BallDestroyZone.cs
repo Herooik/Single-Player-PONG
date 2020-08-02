@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class BallDestroyZone : MonoBehaviour
 {
+    [SerializeField] private ChangeDirectionWall changeDirectionWall;
     [SerializeField] private PlayerLives playerLives;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        changeDirectionWall.IsWallTouched = false;
         playerLives.SubtractLife();
     }
 }

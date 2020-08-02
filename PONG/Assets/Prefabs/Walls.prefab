@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b34d464e825a86c49895d6e0b8c0ebaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeDirectionWall: {fileID: 203249387}
   playerLives: {fileID: 0}
 --- !u!1 &4665693330834035656
 GameObject:

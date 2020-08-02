@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -37,14 +38,16 @@ public class UIManager : MonoBehaviour
         Debug.Log("Quit");
     }
 
-    public void RefreshPlayerLivesText(int livesAmount)
-    {
-        livesText.text = "Lives: " + livesAmount + "x";
-    }
-    
     public void RefreshScoreText(int scoreValue)
     {
         gameplayScoreText.text = scoreValue.ToString();
+    }
+    
+    public void RefreshPlayerLivesText(int livesAmount)
+    {
+        livesText.text = "Lives: " + livesAmount + "x";
+        
+        _uiAnimationManager.ShakeText(livesText);
     }
 
     public void ShowEndMenu(int scoreValue, bool isHighScore)
@@ -55,13 +58,15 @@ public class UIManager : MonoBehaviour
         
         if (isHighScore)
         {
+            endScoreText.text = "YOUR SCORE: \n" + scoreValue;
             highScoreText.text = "NEW HIGH SCORE!";
+            highScoreText.fontSize = 100;
         }
         else
         {
+            highScoreText.fontSize = 50;
             endScoreText.text = "YOUR SCORE: \n" + scoreValue;
             highScoreText.text = "HIGH SCORE: \n" + highScoreValue;
         }
     }
-
 }

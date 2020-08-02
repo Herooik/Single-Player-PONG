@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 public class UIAnimationManager : MonoBehaviour
@@ -34,7 +35,7 @@ public class UIAnimationManager : MonoBehaviour
 
     public void ShowEndMenu()
     {
-        gameplayElementsHolder.DOAnchorPosY(150, 1);
+        gameplayElementsHolder.DOAnchorPosY(1500, 1);
         
         downEndMenuHolder.DOAnchorPosY(0, 1);
         topEndMenuHolder.DOAnchorPosY(0, 1);
@@ -45,6 +46,14 @@ public class UIAnimationManager : MonoBehaviour
         gameplayElementsHolder.DOAnchorPosY(0, 1);
         
         downEndMenuHolder.DOAnchorPosY(-1500, 1);
-        topEndMenuHolder.DOAnchorPosY(650, 1);
+        topEndMenuHolder.DOAnchorPosY(1500, 1);
+    }
+
+    public void ShakeText(TextMeshProUGUI text)
+    {
+        if (GameManager.Instance.IsGameReady)
+        {
+            text.rectTransform.DOShakePosition(2, 15, 15);
+        }
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1991962446}
   - component: {fileID: 1991962450}
   - component: {fileID: 1697952931}
+  - component: {fileID: 1782651341}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -124,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af4d1db73258b64880e22c4b7811844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBallLaunched: 0
   ballPrefab: {fileID: 0}
 --- !u!114 &1991962446
 MonoBehaviour:
@@ -137,8 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f4cd22e1fa19c499ca416c6ace0d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLives: 3
+  maxLives: 2
   _holdBallToPaddleController: {fileID: 964055920}
+  _playAudioSystem: {fileID: 1782651341}
 --- !u!114 &1991962450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,3 +170,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ballMovement: {fileID: 0}
   _changeDirectionWall: {fileID: 0}
+--- !u!114 &1782651341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3557660585144582208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32ab0938d5ad0d40a2b13e6e5ae8ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 8300000, guid: e9df23407107a924798f2c6edd18c10b, type: 3}

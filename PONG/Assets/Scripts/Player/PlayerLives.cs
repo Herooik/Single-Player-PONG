@@ -8,15 +8,11 @@ public class PlayerLives : MonoBehaviour
 {
     [SerializeField] private int maxLives = 3;
     [SerializeField] private HoldBallToPaddleController _holdBallToPaddleController;
+    [SerializeField] private PlayAudioSystem _playAudioSystem;
     
     private int _lives;
 
-    private void Start()
-    {
-        ResetLives();
-    }
-    
-    private void ResetLives()
+    public void ResetLives()
     {
         _lives = maxLives;
         UIManager.Instance.RefreshPlayerLivesText(_lives);
@@ -28,18 +24,17 @@ public class PlayerLives : MonoBehaviour
 
         UIManager.Instance.RefreshPlayerLivesText(_lives);
         
-        _holdBallToPaddleController.HasStarted = false;
-        
-        // play some sad sound, then
-        // play some animation about losing life to inform player and after animation end
+        _holdBallToPaddleController.isBallLaunched = false;
 
         if (_lives <= 0)
         {
-            ResetLives();
-
             GameManager.Instance.GameEnd();
             
             ScoreManager.Instance.CheckForHighScore();
+            
+            return;
         }
+        
+        _playAudioSystem.PlayAudio();
     }
 }

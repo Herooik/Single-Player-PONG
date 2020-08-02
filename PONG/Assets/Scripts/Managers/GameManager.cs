@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public bool IsGameReady { get; private set; }
 
+    [SerializeField] private PlayerLives _playerLives;
+    [SerializeField] private PlayAudioSystem _playAudioSystem;
+
     private void Awake()
     {
         if (Instance == null)
@@ -16,13 +19,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameReady()
+    public void ResetGameStatistic()
     {
+        _playerLives.ResetLives();
+        ScoreManager.Instance.ResetScore();
+
         IsGameReady = true;
     }
 
     public void GameEnd()
     {
+        _playAudioSystem.PlayAudio();
         IsGameReady = false;
     }
 }

@@ -26,10 +26,11 @@ public class ScoreManager : MonoBehaviour
         
         ResetScore();
     }
-
-    public void AddPoint()
+    
+    public void ResetScore()
     {
-        _score++;
+        _score = 0;
+
         UIManager.Instance.RefreshScoreText(_score);
     }
 
@@ -48,11 +49,10 @@ public class ScoreManager : MonoBehaviour
 
         ResetScore();
     }
-
-    private void ResetScore()
+    
+    public void AddPoint()
     {
-        _score = 0;
-
+        _score++;
         UIManager.Instance.RefreshScoreText(_score);
     }
 }
