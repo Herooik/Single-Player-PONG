@@ -7,6 +7,7 @@ public class PaddleMovement : MonoBehaviour
 {
     [SerializeField] [Range(0, 8)] private float maxPos = 4;
     [SerializeField] [Range(-8, 0)] private float minPos = -4;
+    
     private void Update()
     {
         var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

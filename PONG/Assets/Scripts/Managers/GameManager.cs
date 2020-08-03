@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool IsGameReady { get; private set; }
 
     [SerializeField] private PlayerLives _playerLives;
+    [SerializeField] private BallMovement _ballMovement;
     [SerializeField] private PlayAudioSystem _playAudioSystem;
 
     private void Awake()
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetGameStatistic()
     {
+        _ballMovement.SetStartMovementSpeed();
         _playerLives.ResetLives();
         ScoreManager.Instance.ResetScore();
 

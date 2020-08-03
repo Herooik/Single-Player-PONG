@@ -10,6 +10,9 @@ public class ChangeDirectionWall : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        IsWallTouched = true;
+        if (other.gameObject.GetComponent<BallMovement>())
+        {
+            IsWallTouched = true;
+        }
     }
 }

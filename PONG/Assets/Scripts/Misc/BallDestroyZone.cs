@@ -10,7 +10,10 @@ public class BallDestroyZone : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        changeDirectionWall.IsWallTouched = false;
-        playerLives.SubtractLife();
+        if (other.GetComponent<BallMovement>())
+        {
+            changeDirectionWall.IsWallTouched = false;
+            playerLives.SubtractLife();
+        }
     }
 }
