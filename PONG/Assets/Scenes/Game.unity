@@ -784,7 +784,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 662778683, guid: 1de99c8b8c4a81d4dad0d1b7fb804f0c, type: 3}
+    - target: {fileID: 1335602999, guid: 1de99c8b8c4a81d4dad0d1b7fb804f0c, type: 3}
       propertyPath: _holdBallToPaddleController
       value: 
       objectReference: {fileID: 1782651343}
@@ -1073,6 +1073,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1070240745}
+    - target: {fileID: 4762398154990544351, guid: 7c12ee69d00de9f45b07b0a111dc2315,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 310719978}
     - target: {fileID: 4762398155559907456, guid: 7c12ee69d00de9f45b07b0a111dc2315,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

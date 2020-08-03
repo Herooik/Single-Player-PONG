@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f4cd22e1fa19c499ca416c6ace0d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLives: 2
+  maxLives: 3
   _holdBallToPaddleController: {fileID: 964055920}
   _playAudioSystem: {fileID: 1782651341}
 --- !u!114 &1991962450

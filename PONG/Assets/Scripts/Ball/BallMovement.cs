@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class BallMovement : MonoBehaviour
 {
-    public float movementSpeed;
+    public float movementSpeed { get; set; }
 
     [SerializeField] private float startingMovementSpeed = 20f;
     [SerializeField] private Rigidbody2D ballRigidbody;
@@ -37,6 +37,5 @@ public class BallMovement : MonoBehaviour
     private void BallMoving()
     {
         ballRigidbody.velocity = ballRigidbody.velocity.normalized * movementSpeed;
-        _lastVelocity = ballRigidbody.velocity;
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 662778681}
   - component: {fileID: 662778683}
   - component: {fileID: 1335602998}
+  - component: {fileID: 1335602999}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -134,10 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e665a3c8cf559b4ba862f20a6bff16b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 20
-  _holdBallToPaddleController: {fileID: 0}
+  startingMovementSpeed: 15
   ballRigidbody: {fileID: 662778682}
-  playAudioSystem: {fileID: 1335602998}
 --- !u!114 &1335602998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,3 +150,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 8300000, guid: 0696e4d617aea05468515b0908d3dbce, type: 3}
+--- !u!114 &1335602999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3061458349571591749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d585f5223f6596948a182f8d9db5aed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballRigidbody: {fileID: 662778682}
+  _holdBallToPaddleController: {fileID: 0}
+  playAudioSystem: {fileID: 1335602998}

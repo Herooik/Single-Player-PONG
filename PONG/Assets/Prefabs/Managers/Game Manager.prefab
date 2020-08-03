@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerLives: {fileID: 0}
+  _ballMovement: {fileID: 0}
   _playAudioSystem: {fileID: 1515221484}
 --- !u!114 &1515221484
 MonoBehaviour:
